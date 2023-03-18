@@ -1,12 +1,13 @@
 require 'minitest/autorun'
-def lonely_integer(a)
-  a = a.map do |x|
-    a.filter do |y|
+
+def lonely_integer(arr)
+  arr = arr.map do |x|
+    arr.filter do |y|
       y == x
     end
   end
-  a.each do |n|
-   return n[0] if n.count == 1
+  arr.each do |n|
+    return n[0] if n.count == 1
   end
 end
 
