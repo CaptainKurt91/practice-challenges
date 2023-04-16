@@ -6,7 +6,7 @@ def flibbing_bits(n)
   diff = binary_array.count
   num = 32 - diff
   num.times { binary_array.insert(0, "0") }
-  binary = binary_array.map {|n| n = n == "0" ?  1 :  0}
+  binary = binary_array.map {|n| n = n == "0" ? 1 : 0}
   binary.join.to_i(2)
 end
 
