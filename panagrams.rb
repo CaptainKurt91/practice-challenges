@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'minitest/autorun'
 
 def panagrams(str)
@@ -7,7 +9,7 @@ def panagrams(str)
   letters.each do |e|
     count -= 1 if str_arr.find { |x| x.downcase == e }
   end
-  count == 0 ? 'pangram' : 'not pangram'
+  count.zero? ? 'pangram' : 'not pangram'
 end
 
 class PanagramsTest < MiniTest::Test

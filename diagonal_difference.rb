@@ -1,5 +1,7 @@
 require 'minitest/autorun'
 
+# Refactor in to seprate arrays by the square root number
+
 def diagonal_difference(arr)
   num = Integer.sqrt(arr.count)
   left_to_right = l_to_r(num, arr)

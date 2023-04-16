@@ -3,13 +3,14 @@
 require 'minitest/autorun'
 
 def count_sort(arr)
+  hash = arr.reduce({}) { |k, v| k[v] ||= 0; k[v] += 1; k }
   freqency_arr = Array.new(100) { 0 }
-  freqency_arr.each_with_index do |e, i|
-    count = (arr.find_all { |x| x == i }).count # Finds all occurences of the number matching the index creating an arr then counts it 
-    freqency_arr[i] = count
-  end
-  freqency_arr
+  freqency_arr.map.with_index { |_k, v| hash[v] ? hash[v] : 0 }
 end
+
+# freqency_arr.each_with_index do |e, i|
+# freqency_arr[i] = (arr.find_all { _1 == i }).count # Finds all occurences of the number matching the index creating an arr then counts it
+# end
 
 class CountSortTets < MiniTest::Test
   def test_count_sort
