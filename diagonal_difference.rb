@@ -1,22 +1,11 @@
 require 'minitest/autorun'
 
-<<<<<<< HEAD
-# Refactor in to seprate arrays by the square root number
-
-def diagonal_difference(arr)
-  num = Integer.sqrt(arr.count)
-  left_to_right = l_to_r(num, arr)
-  right_to_left = r_to_l(num, arr)
-  (left_to_right.inject(:+) - right_to_left.inject(:+)).abs
-end
-=======
 # def diagonal_difference(arr)
 #   num = Integer.sqrt(arr.count)
 #   left_to_right = l_to_r(num, arr)
 #   right_to_left = r_to_l(num, arr)
 #   (left_to_right.inject(:+) - right_to_left.inject(:+)).abs
 # end
->>>>>>> 6ec0e7059309133b1070b22177b167f84aa34be2
 
 # def l_to_r(num, arr)
 #   row = 0
@@ -47,7 +36,7 @@ def diagonal_difference(arr)
   secondary_diagonal_sum = 0
 
   arr.each_with_index do |row, index|
-    primary_diagonal_sum += row[index]
+    primary_diagonal_sum += row[index] # With each iteration 
     secondary_diagonal_sum += row[arr.length - index - 1]
   end
   (primary_diagonal_sum - secondary_diagonal_sum).abs
