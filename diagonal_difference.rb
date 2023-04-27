@@ -29,6 +29,15 @@ require 'minitest/autorun'
 #   right_to_left
 # end
 
+##
+# This Ruby function calculates the absolute difference between the sum of the primary diagonal and
+# the sum of the secondary diagonal of a square matrix.
+# 
+# Args:
+#   arr: The input array of integers from which we need to calculate the diagonal difference. The
+# array should have a square shape, meaning that the number of rows and columns should be equal. The
+# function assumes that the array is already in this format.
+
 def diagonal_difference(arr)
   num = Math.sqrt(arr.length).to_i
   arr = arr.each_slice(num).to_a

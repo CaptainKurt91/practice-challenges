@@ -17,4 +17,11 @@ class FlippingBitsTest < MiniTest::Test
     result = flibbing_bits(n)
     assert_equal expected_result, result
   end
+
+  def test_flipping_bits_ten
+    n = 10
+    expected_result = 4_294_967_285
+    result = flibbing_bits(n)
+    assert_equal expected_result, result
+  end
 end
