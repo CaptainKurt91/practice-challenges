@@ -1,9 +1,13 @@
 require 'minitest/autorun'
 
 def ips_between(start, finish)
-  start_array = start.split(".")
-  finish_array = finish.split(".")
-  
+  start_sum = 0
+  finish_sum  = 0
+  start_array = start.split(".").reverse
+  finish_array = finish.split(".").reverse
+  start_array.each_with_index { |n, i| start_sum += n.to_i*256**i }
+  finish_array.each_with_index { |n, i| finish_sum += n.to_i*256**i }
+  return (start_sum - finish_sum).abs
 end
 
 class IpsBetweenTest < Minitest::Test
